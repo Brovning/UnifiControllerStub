@@ -282,13 +282,11 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
         $controller1 = @json_decode($handle->getOpt(CURLOPT_POSTFIELDS));
         echo "\ncurl_exec Controller1:";
         print_r($controller1);
-    } else {
-        $controller0 = array(null, null);
-        $controller1 = array(null, null);
     }
+    
     if ("/api/login" == $url &&
-    (($UserName != $controller0[0] && $UserName != $controller1[0])
-    || ($Password != $controller0[1] && $Password != $controller1[1]))) {
+    (((!isset($controller0[0]) || $UserName != $controller0[0]) && (!isset($controller1[0]) || $UserName != $controller1[0]))
+    || ((!isset($controller0[1]) || $Password != $controller0[1]) && (!isset($controller1[1]) || $Password != $controller1[1])))) {
         $httpCode = '401';
         if (null !== $handle->getOpt(CURLOPT_HEADER) && true == $handle->getOpt(CURLOPT_HEADER)) {
             $returnValue = 'HTTP/2 401 <CR><LF>vary: Origin<CR><LF>x-dns-prefetch-control: off<CR><LF>x-frame-options: SAMEORIGIN<CR><LF>strict-transport-security: max-age=15552000; includeSubDomains<CR><LF>x-download-options: noopen<CR><LF>x-content-type-options: nosniff<CR><LF>x-xss-protection: 1; mode=block<CR><LF>accept-ranges: bytes<CR><LF>x-csrf-token: '.$Xcsrftoken.'<CR><LF>content-type: application/json; charset=utf-8<CR><LF>content-length: 56<CR><LF>x-response-time: 411ms<CR><LF>set-cookie: TOKEN='.$Cookie.'; path=/; samesite=none; secure; httponly<CR><LF>date: '.date(DATE_RFC2822).'<CR><LF><CR><LF>{<LF>  "errors": [<LF>    "Invalid username or password"<LF>  ]<LF>}';
