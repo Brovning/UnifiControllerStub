@@ -245,7 +245,9 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
 
     $url = $handle->getOpt(CURLOPT_URL);
 
-    echo "\ncurl_exec URL:".$url."\n";
+    if (DEBUG)  {
+        echo "\ncurl_exec URL:".$url."\n";
+    }
 
     // check IP and Port
     if (false === strpos($url, $ServerAddress) || false === strpos($url, $ServerPort)) {
@@ -274,14 +276,20 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
 
     // check credentials (only if in login-phase!)
     if (null !== $handle->getOpt(CURLOPT_POSTFIELDS)) {
-        echo "\ncurl_exec CURLOPT_POSTFIELDS: ".$handle->getOpt(CURLOPT_POSTFIELDS);
+        if (DEBUG)  {
+            echo "\ncurl_exec CURLOPT_POSTFIELDS: ".$handle->getOpt(CURLOPT_POSTFIELDS);
+        }
         $controller0 = @explode("&", $handle->getOpt(CURLOPT_POSTFIELDS));
         $controller0 = str_ireplace(array("username=", "password="), array("", ""), $controller0);
-        echo "\ncurl_exec Controller0:";
-        print_r($controller0);
+        if (DEBUG)  {
+            echo "\ncurl_exec Controller0:";
+            print_r($controller0);
+        }
         $controller1 = @json_decode($handle->getOpt(CURLOPT_POSTFIELDS));
-        echo "\ncurl_exec Controller1:";
-        print_r($controller1);
+        if (DEBUG)  {
+            echo "\ncurl_exec Controller1:";
+            print_r($controller1);
+        }
     }
     
     if ("/api/login" == $url &&
@@ -300,7 +308,9 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
 
     // check cookie (only if not in login-phase!)
     //curl_setopt($ch, CURLOPT_HTTPHEADER, array("cookie: ".$Cookie));
-    echo "\ncurl_exec CURLOPT_HTTPHEADER: ";
+    if (DEBUG)  {
+        echo "\ncurl_exec CURLOPT_HTTPHEADER: ";
+    }
     if ("/api/login" != $url) {
         if (null !== $handle->getOpt(CURLOPT_HTTPHEADER)) {
             foreach ($handle->getOpt(CURLOPT_HTTPHEADER) as $httpHeader) {
@@ -333,14 +343,12 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
             } else {
                 $returnValue = $httpCode;
             }
-//			echo $returnValue;
             break;
         case "/api/self/sites":
             $returnValue = '{"meta":{"rc":"ok"},"data":[{"_id":"12345678990afe068c992458","anonymous_id":"12345678-1234-1234-1234-123456789123","name":"default","desc":"Default","attr_hidden_id":"default","attr_no_delete":true,"role":"admin","role_hotspot":false}]}';
             break;
         default:
             $returnValue = "\ncurl_exec: URL '".$url."' unknown!";
-//			echo $returnValue;
             break;
     }
 
