@@ -126,8 +126,8 @@ function Unifi_getxcsrftoken(): string
  */
 final class CurlHandle
 {
-    protected $CURLOPT = array();
-    protected $CURLINFO = array();
+    public $CURLOPT = array();
+    public $CURLINFO = array();
 
     public function setOpt($option, $value)
     {
@@ -139,7 +139,7 @@ final class CurlHandle
         if (isset($this->$CURLOPT[$option])) {
             return $this->$CURLOPT[$option];
         } else {
-            null;
+            return null;
         }
     }
 
@@ -153,7 +153,7 @@ final class CurlHandle
         if (isset($this->$CURLINFO[$option])) {
             return $this->$CURLINFO[$option];
         } else {
-            null;
+            return null;
         }
     }
 }
