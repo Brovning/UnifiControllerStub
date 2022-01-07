@@ -126,8 +126,8 @@ function Unifi_getxcsrftoken(): string
  */
 final class CurlHandle
 {
-	private $CURLOPT = array();
-	private $CURLINFO = array();
+	private $CURLOPT = array(CURLOPT_WRITEHEADER);
+	private $CURLINFO = array(CURLINFO_EFFECTIVE_METHOD);
 }
 
 /**
