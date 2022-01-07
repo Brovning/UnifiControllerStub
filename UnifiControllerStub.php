@@ -129,6 +129,14 @@ final class CurlHandle
     private $CURLOPT = array();
     private $CURLINFO = array();
 
+    public function __construct()
+    {
+    }
+
+    public function __destruct()
+    {
+    }
+
     public function setOpt($option, $value)
     {
         $this->CURLOPT[$option] = $value;
@@ -182,7 +190,7 @@ return: void
  */
 function curl_close(CurlHandle $handle): void
 {
-    echo "\n***************\curl_close() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    $handle = null;
 }
 
 /*
@@ -201,7 +209,7 @@ Return the last error number
  */
 function curl_errno(CurlHandle $handle): int
 {
-    echo "\n***************\curl_errno() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_errno() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -210,7 +218,7 @@ Return a string containing the last error for the current session
  */
 function curl_error(CurlHandle $handle): string
 {
-    echo "\n***************\curl_error() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_error() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -219,7 +227,7 @@ URL encodes the given string
  */
 function curl_escape(CurlHandle $handle, string $string): ?string/*|false*/
 {
-    echo "\n***************\curl_escape() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_escape() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -380,7 +388,7 @@ Add a normal cURL handle to a cURL multi handle
  */
 function curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
 {
-    echo "\n***************\curl_multi_add_handle() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_add_handle() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -389,7 +397,7 @@ Close a set of cURL handles
  */
 function curl_multi_close(CurlMultiHandle $multi_handle): void
 {
-    echo "\n***************\curl_multi_close() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_close() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -398,7 +406,7 @@ Return the last multi curl error number
  */
 function curl_multi_errno(CurlMultiHandle $multi_handle): int
 {
-    echo "\n***************\curl_multi_errno() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_errno() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -407,7 +415,7 @@ Run the sub-connections of the current cURL handle
  */
 function curl_multi_exec(CurlMultiHandle $multi_handle, &$still_running): int
 {
-    echo "\n***************\curl_multi_exec() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_exec() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -416,7 +424,7 @@ Return the content of a cURL handle if CURLOPT_RETURNTRANSFER is set
  */
 function curl_multi_getcontent(CurlHandle $handle): ?string
 {
-    echo "\n***************\curl_multi_getcontent() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_getcontent() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -425,7 +433,7 @@ Get information about the current transfers
  */
 function curl_multi_info_read(CurlMultiHandle $multi_handle, &$queued_messages = null): ?array/*|false*/
 {
-    echo "\n***************\curl_multi_info_read() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_info_read() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -434,7 +442,7 @@ Returns a new cURL multi handle
  */
 function curl_multi_init(): CurlMultiHandle
 {
-    echo "\n***************\curl_multi_init() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_init() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -443,7 +451,7 @@ Remove a multi handle from a set of cURL handles
  */
 function curl_multi_remove_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
 {
-    echo "\n***************\curl_multi_remove_handle() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_remove_handle() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -452,7 +460,7 @@ Wait for activity on any curl_multi connection
  */
 function curl_multi_select(CurlMultiHandle $multi_handle, float $timeout = 1.0): int
 {
-    echo "\n***************\curl_multi_select() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_select() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -461,7 +469,7 @@ Set an option for the cURL multi handle
  */
 function curl_multi_setopt(CurlMultiHandle $multi_handle, int $option, mixed $value): bool
 {
-    echo "\n***************\curl_multi_setopt() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_setopt() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -470,7 +478,7 @@ Return string describing error code
  */
 function curl_multi_strerror(int $error_code): ?string
 {
-    echo "\n***************\curl_multi_strerror() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_multi_strerror() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -479,7 +487,7 @@ Pause and unpause a connection
  */
 function curl_pause(CurlHandle $handle, int $flags): int
 {
-    echo "\n***************\curl_pause() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_pause() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -488,7 +496,7 @@ Reset all options of a libcurl session handle
  */
 function curl_reset(CurlHandle $handle): void
 {
-    echo "\n***************\curl_reset() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_reset() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -517,7 +525,7 @@ Close a cURL share handle
  */
 function curl_share_close(CurlShareHandle $share_handle): void
 {
-    echo "\n***************\curl_share_close() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_share_close() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -526,7 +534,7 @@ Return the last share curl error number
  */
 function curl_share_errno(CurlShareHandle $share_handle): int
 {
-    echo "\n***************\curl_share_errno() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_share_errno() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -535,7 +543,7 @@ Initialize a cURL share handle
  */
 function curl_share_init(): CurlShareHandle
 {
-    echo "\n***************\curl_share_init() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_share_init() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -544,7 +552,7 @@ Set an option for a cURL share handle
  */
 function curl_share_setopt(CurlShareHandle $share_handle, int $option, mixed $value): bool
 {
-    echo "\n***************\curl_share_setopt() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_share_setopt() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -553,7 +561,7 @@ Return string describing the given error code
  */
 function curl_share_strerror(int $error_code): ?string
 {
-    echo "\n***************\curl_share_strerror() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_share_strerror() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -562,7 +570,7 @@ Return string describing the given error code
  */
 function curl_strerror(int $error_code): ?string
 {
-    echo "\n***************\curl_strerror() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_strerror() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -571,7 +579,7 @@ Decodes the given URL encoded string
  */
 function curl_unescape(CurlHandle $handle, string $string): ?string/*|false*/
 {
-    echo "\n***************\curl_unescape() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_unescape() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
 
 /*
@@ -580,5 +588,5 @@ Gets cURL version information
  */
 function curl_version(): ?array/*|false*/
 {
-    echo "\n***************\curl_version() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
+    echo "\n***************\ncurl_version() NOT IMPLEMENTED YET ! ! !\nDo you like to contribute?!?\n***************\n";
 }
