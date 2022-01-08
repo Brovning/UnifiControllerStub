@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+if (!defined('DEBUG')) {
+    define("DEBUG", false);
+}
+
 include_once __DIR__.'/UnifiControllerStub.inc.php';
 
 /* ***************************************
@@ -245,7 +249,7 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
 
     $url = $handle->getOpt(CURLOPT_URL);
 
-    if (DEBUG)  {
+    if (DEBUG) {
         echo "\ncurl_exec URL:".$url."\n";
     }
 
@@ -276,17 +280,17 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
 
     // check credentials (only if in login-phase!)
     if (null !== $handle->getOpt(CURLOPT_POSTFIELDS)) {
-        if (DEBUG)  {
+        if (DEBUG) {
             echo "\ncurl_exec CURLOPT_POSTFIELDS: ".$handle->getOpt(CURLOPT_POSTFIELDS);
         }
         $controller0 = @explode("&", $handle->getOpt(CURLOPT_POSTFIELDS));
         $controller0 = str_ireplace(array("username=", "password="), array("", ""), $controller0);
-        if (DEBUG)  {
+        if (DEBUG) {
             echo "\ncurl_exec Controller0:";
             print_r($controller0);
         }
         $controller1 = @json_decode($handle->getOpt(CURLOPT_POSTFIELDS));
-        if (DEBUG)  {
+        if (DEBUG) {
             echo "\ncurl_exec Controller1:";
             print_r($controller1);
         }
@@ -308,7 +312,7 @@ function curl_exec(CurlHandle $handle)/*: string|bool*/
 
     // check cookie (only if not in login-phase!)
     //curl_setopt($ch, CURLOPT_HTTPHEADER, array("cookie: ".$Cookie));
-    if (DEBUG)  {
+    if (DEBUG) {
         echo "\ncurl_exec CURLOPT_HTTPHEADER: ";
     }
     if ("/api/login" != $url) {
