@@ -149,6 +149,210 @@ jobs:
 
 ## 4. PHP functions
 
+### Unifi Default Values
+
+$ControllerType = 0;
+
+$Site = "default";
+
+$ServerAddress = "192.168.1.1";
+
+$ServerPort = "443";
+
+$UserName = "testuser";
+
+$Password = "testpass";
+
+$Cookie = "0123456789";
+
+$Xcsrftoken = "1234567890";
+
+
+### Unifi Set() and Get() functions
+
+    function Unifi_setControllerType(int $newControllerType = 0): void
+
+
+    function Unifi_getControllerType(): int
+
+
+    function Unifi_setSite(string $newSite = "default"): void
+
+
+    function Unifi_getSite(): string
+
+
+    function Unifi_setServerAddress(string $newServerAddress = "192.168.1.1"): void
+
+
+    function Unifi_getServerAddress(): string
+
+
+    function Unifi_setServerPort(string $newServerPort = "443"): void
+
+
+    function Unifi_getServerPort(): string
+
+
+    function Unifi_setUserName(string $newUserName = "testuser"): void
+
+
+    function Unifi_getUserName(): string
+
+
+    function Unifi_setPassword(string $newPassword = "testpass"): void
+
+
+    function Unifi_getPassword(): string
+
+
+    function Unifi_setCookie(string $newCookie = "0123456789"): void
+
+
+    function Unifi_getCookie(): string
+
+
+    function Unifi_setxcsrftoken(string $newXcsrftoken = "1234567890"): void
+
+
+    function Unifi_getxcsrftoken(): string
+
+
+### CURL funcitons
+
+    function curl_close(CurlHandle $handle): void
+
+curl_close: Close a cURL session
+
+return: void
+
+    function curl_copy_handle(CurlHandle $handle): ?CurlHandle/*|false*/
+
+curl_copy_handle: Copy a cURL handle along with all of its preferences
+
+    function curl_exec(CurlHandle $handle)/*: string|bool*/
+
+curl_exec: Perform a cURL session
+
+    function curl_file_create(string $filename, ?string $mime_type = null, ?string $posted_filename = null): CURLFile
+
+curl_file_create: Create a CURLFile object
+
+    function curl_getinfo(CurlHandle $handle, ?int $option = null): ?int/*mixed*/
+
+curl_getinfo: Get information regarding a specific transfer
+
+    function curl_init(?string $url = null): ?CurlHandle/*|false*/
+
+curl_init: Initialize a cURL session
+
+    function curl_setopt(CurlHandle $handle, int $option, $value): bool
+
+curl_setopt: Set an option for a cURL transfer
+
+
+### curl functions NOT implemented yet! Do you like to contribute?!?
+
+    function curl_errno(CurlHandle $handle): int
+
+curl_errno: Return the last error number
+
+    function curl_error(CurlHandle $handle): string
+
+curl_error: Return a string containing the last error for the current session
+
+    function curl_escape(CurlHandle $handle, string $string): ?string/*|false*/
+
+curl_escape: URL encodes the given string
+
+    function curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
+
+curl_multi_add_handle: Add a normal cURL handle to a cURL multi handle
+
+    function curl_multi_close(CurlMultiHandle $multi_handle): void
+
+curl_multi_close: Close a set of cURL handles
+
+    function curl_multi_errno(CurlMultiHandle $multi_handle): int
+
+curl_multi_errno: Return the last multi curl error number
+
+    function curl_multi_exec(CurlMultiHandle $multi_handle, &$still_running): int
+
+curl_multi_exec: Run the sub-connections of the current cURL handle
+
+    function curl_multi_getcontent(CurlHandle $handle): ?string
+
+curl_multi_getcontent: Return the content of a cURL handle if CURLOPT_RETURNTRANSFER is set
+
+    function curl_multi_info_read(CurlMultiHandle $multi_handle, &$queued_messages = null): ?array/*|false*/
+
+curl_multi_info_read: Get information about the current transfers
+
+    function curl_multi_init(): CurlMultiHandle
+
+curl_multi_init: Returns a new cURL multi handle
+
+    function curl_multi_remove_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
+
+curl_multi_remove_handle: Remove a multi handle from a set of cURL handles
+
+    function curl_multi_select(CurlMultiHandle $multi_handle, float $timeout = 1.0): int
+
+curl_multi_select: Wait for activity on any curl_multi connection
+
+    function curl_multi_setopt(CurlMultiHandle $multi_handle, int $option, mixed $value): bool
+
+curl_multi_setopt: Set an option for the cURL multi handle
+
+    function curl_multi_strerror(int $error_code): ?string
+
+curl_multi_strerror: Return string describing error code
+
+    function curl_pause(CurlHandle $handle, int $flags): int
+
+curl_pause: Pause and unpause a connection
+
+    function curl_reset(CurlHandle $handle): void
+
+curl_reset: Reset all options of a libcurl session handle
+
+    function curl_setopt_array(CurlHandle $handle, array $options): bool
+
+curl_setopt_array: Set multiple options for a cURL transfer
+
+    function curl_share_close(CurlShareHandle $share_handle): void
+
+curl_share_close: Close a cURL share handle
+
+    function curl_share_errno(CurlShareHandle $share_handle): int
+
+curl_share_errno: Return the last share curl error number
+
+    function curl_share_init(): CurlShareHandle
+
+curl_share_init: Initialize a cURL share handle
+
+    function curl_share_setopt(CurlShareHandle $share_handle, int $option, mixed $value): bool
+
+curl_share_setopt: Set an option for a cURL share handle
+
+    function curl_share_strerror(int $error_code): ?string
+
+curl_share_strerror: Return string describing the given error code
+
+    function curl_strerror(int $error_code): ?string
+
+curl_strerror: Return string describing the given error code
+
+    function curl_unescape(CurlHandle $handle, string $string): ?string/*|false*/
+
+curl_unescape: Decodes the given URL encoded string
+
+    function curl_version(): ?array/*|false*/
+
+curl_version: Gets cURL version information
+
 
 ## 5. Version History
 
