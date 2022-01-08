@@ -2,7 +2,18 @@
 UnifiControllerStub for PHP testing of curl API requests
 
 
-## Integrate the UnifiControllerStub in your Git repository as submodule
+## Table of Contens
+
+1. [Integrate the UnifiControllerStub in your Git repository as submodule](#1-integrate-the-unificontrollerstub-in-your-git-repository-as-submodule)
+2. [Setup PHP for using the UnifiControllerStub](#2-setup-php-for-using-the-unificontrollerstub)
+3. [Setup GitHub Action for automated tests](#3-setup-github-action-for-automated-tests)
+4. [PHP functions](#4-php-functions)
+5. [Version History](#5-version-history)
+6. [Do you need help or are you having suggestions?](#6-do-you-need-help-or-are-you-having-suggestions)
+7. [How to contribute?](#7-how-to-contribute)
+
+
+## 1. Integrate the UnifiControllerStub in your Git repository as submodule
 
 ### Why submodules?
 
@@ -67,7 +78,7 @@ Alternative way for updating all submodules in your repository:
     git submodule foreach git pull origin master
 
 
-## Setup PHP for using the UnifiControllerStub
+## 2. Setup PHP for using the UnifiControllerStub
 
 In the UnifiControllerStub a redeclaration of the curl functions is made.
 If you use the UnifiControllerStub, you have to deactivate/remove the curl extension, to avoid an error message like this:
@@ -97,7 +108,7 @@ There is an example [php.ini](php.ini), which is containing all recommended PHP 
 This [php.ini](php.ini) is working e.g. with GitHub actions, using ubuntu with PHP 8.1.
 
 
-## Setup GitHub Action for automated tests
+## 3. Setup GitHub Action for automated tests
 
 For automated tests in GitHub you have to create a workflow in the folder `.github/workflows/`.
 
@@ -132,13 +143,19 @@ jobs:
 ```
 
 
-## Do you need help or are you having suggestions?
+## 4. PHP functions
+
+
+## 5. Version History
+
+
+## 6. Do you need help or are you having suggestions?
 
 There is still work to be done to add functionality and further improve this UnifiControllerStub, so all suggestions/comments are welcome. 
 
 Please use the [GitHub Discussions](https://github.com/Brovning/UnifiControllerStub/discussions) to share your suggestions and questions.
 
 
-## How to contribute?
+## 7. How to contribute?
 
 If you would like to contribute, please open an [issue](https://github.com/Brovning/UnifiControllerStub/issues) and include your code there or commit your changes to a fork and create a [pull request](https://github.com/Brovning/UnifiControllerStub/pulls).
