@@ -148,6 +148,9 @@ jobs:
 
 ## 5. Version History
 
+### v1.0, 2022-01-08
+- first public release
+
 
 ## 6. Do you need help or are you having suggestions?
 
