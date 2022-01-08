@@ -73,8 +73,8 @@ In the UnifiControllerStub a redeclaration of the curl functions is made.
 If you use the UnifiControllerStub, you have to deactivate/remove the curl extension, to avoid an error message like this:
 > [PHP Fatal error:  Cannot redeclare curl_close() in /home/runner/work/Unifi-Toolbox/Unifi-Toolbox/tests/UnifiControllerStub/UnifiControllerStub.php on line 166]
 
-To remove the curl extension from your PHP configuration, you have to look for you php.ini and open it.
-Remove the curl extension line in your php.ini or add a ';' in front of it to have it commented (no longer used for extension integration).
+To remove the curl extension from your PHP configuration, you have to look for your php.ini and open it.
+Remove the curl extension line in your php.ini or add a `;` in front of it to have it commented (no longer used for extension integration).
 ```
 ;extension=curl.so
 ```
@@ -85,8 +85,14 @@ This [php.ini](php.ini) is working e.g. with GitHub actions, using ubuntu with P
 
 ## Setup GitHub Action for automated tests
 
-For automated tests in GitHub you have to create a workflow in the folder ".github/workflows/".
-The file can be named for example "ValidationTests.yml".
+For automated tests in GitHub you have to create a workflow in the folder `.github/workflows/`.
+
+See also the official [GitHub Workflow documentation](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions) for creating actions.
+
+The file can be named for example `ValidationTests.yml`.
+
+In phpdbg you can set the php.ini which shall be used with the parameter `-c` and ignore the default php.ini with the parameter `-n`.
+
 If your repository in GitHub is named "Unifi-Toolbox" the content of "ValidationTests.yml" must look like this:
 ```
 name: Validation Tests
