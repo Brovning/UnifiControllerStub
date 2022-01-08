@@ -79,6 +79,20 @@ Remove the curl extension line in your php.ini or add a `;` in front of it to ha
 ;extension=curl.so
 ```
 
+You can show the currently used php.ini path by using:
+```
+php --ini
+```
+or:
+```
+php -i
+```
+
+Your php.ini can be printed on the terminal by using e.g.:
+```
+cat /home/runner/work/Unifi-Toolbox/Unifi-Toolbox/tests/UnifiControllerStub/php.ini
+```
+
 There is an example [php.ini](php.ini), which is containing all recommended PHP configuration settings for PHPUnit.
 This [php.ini](php.ini) is working e.g. with GitHub actions, using ubuntu with PHP 8.1.
 
