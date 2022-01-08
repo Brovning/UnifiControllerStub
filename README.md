@@ -118,3 +118,13 @@ jobs:
 ```
 
 
+## Do you need help or are you having suggestions?
+
+There is still work to be done to add functionality and further improve this UnifiControllerStub, so all suggestions/comments are welcome. 
+
+Please use the [GitHub Discussions](https://github.com/Brovning/UnifiControllerStub/discussions) to share your suggestions and questions.
+
+
+## How to contribute?
+
+If you would like to contribute, please open an [issue](https://github.com/Brovning/UnifiControllerStub/issues) and include your code there or commit your changes to a fork and create a [pull request](https://github.com/Brovning/UnifiControllerStub/pulls).
