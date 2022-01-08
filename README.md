@@ -31,6 +31,10 @@ You can add a submodule to a repository like this:
 
     git submodule add https://github.com/Brovning/UnifiControllerStub tests/UnifiControllerStub
 
+If you have some conflicts, you can force the submodule add with:
+
+    git submodule add --force https://github.com/Brovning/UnifiControllerStub tests/UnifiControllerStub
+
 
 After this operation, if you do a `git status` you'll see two files in the `Changes to be committed` list: 
 
