@@ -7,10 +7,11 @@ UnifiControllerStub for PHP testing of curl API requests
 1. [Integrate the UnifiControllerStub in your Git repository as submodule](#1-integrate-the-unificontrollerstub-in-your-git-repository-as-submodule)
 2. [Setup PHP for using the UnifiControllerStub](#2-setup-php-for-using-the-unificontrollerstub)
 3. [Setup GitHub Action for automated tests](#3-setup-github-action-for-automated-tests)
-4. [PHP functions](#4-php-functions)
-5. [Version History](#5-version-history)
-6. [Do you need help or are you having suggestions?](#6-do-you-need-help-or-are-you-having-suggestions)
-7. [How to contribute?](#7-how-to-contribute)
+4. [How to use UnifiControllerStub](#4-how-to-use-unificontrollerstub)
+5. [PHP functions](#5-php-functions)
+6. [Version History](#6-version-history)
+7. [Do you need help or are you having suggestions?](#7-do-you-need-help-or-are-you-having-suggestions)
+8. [How to contribute?](#8-how-to-contribute)
 
 
 ## 1. Integrate the UnifiControllerStub in your Git repository as submodule
@@ -147,9 +148,14 @@ jobs:
 ```
 
 
-## 4. PHP functions
+## 4. How to use UnifiControllerStub
 
-### Unifi Default Values
+... to be added
+
+
+## 5. PHP functions
+
+### Unifi default values
 
 $ControllerType = 0;
 
@@ -218,7 +224,7 @@ $Xcsrftoken = "1234567890";
     function Unifi_getxcsrftoken(): string
 
 
-### CURL funcitons
+### CURL functions
 
     function curl_close(CurlHandle $handle): void
 
@@ -251,7 +257,7 @@ curl_init: Initialize a cURL session
 curl_setopt: Set an option for a cURL transfer
 
 
-### curl functions NOT implemented yet! Do you like to contribute?!?
+### CURL functions NOT implemented yet! Do you like to contribute?!?
 
     function curl_errno(CurlHandle $handle): int
 
@@ -354,19 +360,19 @@ curl_unescape: Decodes the given URL encoded string
 curl_version: Gets cURL version information
 
 
-## 5. Version History
+## 6. Version History
 
 ### v1.0, 2022-01-08
 - first public release
 
 
-## 6. Do you need help or are you having suggestions?
+## 7. Do you need help or are you having suggestions?
 
 There is still work to be done to add functionality and further improve this UnifiControllerStub, so all suggestions/comments are welcome. 
 
 Please use the [GitHub Discussions](https://github.com/Brovning/UnifiControllerStub/discussions) to share your suggestions and questions.
 
 
-## 7. How to contribute?
+## 8. How to contribute?
 
 If you would like to contribute, please open an [issue](https://github.com/Brovning/UnifiControllerStub/issues) and include your code there or commit your changes to a fork and create a [pull request](https://github.com/Brovning/UnifiControllerStub/pulls).
