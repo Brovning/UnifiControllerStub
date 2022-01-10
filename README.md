@@ -14,6 +14,7 @@ UnifiControllerStub for PHP testing of curl API requests
 8. [How to contribute?](#8-how-to-contribute)
 
 
+
 ## 1. Integrate the UnifiControllerStub in your Git repository as submodule
 
 ### Why submodules?
@@ -30,11 +31,15 @@ When you add a submodule in Git, you don't add the **code** of the submodule to 
 
 You can add a submodule to a repository like this:
 
-    git submodule add https://github.com/Brovning/UnifiControllerStub tests/UnifiControllerStub
+```ShellSession
+git submodule add https://github.com/Brovning/UnifiControllerStub tests/UnifiControllerStub
+```
 
 If you have some conflicts, you can force the submodule add with:
 
-    git submodule add --force https://github.com/Brovning/UnifiControllerStub tests/UnifiControllerStub
+```ShellSession
+git submodule add --force https://github.com/Brovning/UnifiControllerStub tests/UnifiControllerStub
+```
 
 
 After this operation, if you do a `git status` you'll see two files in the `Changes to be committed` list: 
@@ -57,7 +62,9 @@ Even if there are changes in the UnifiControllerStub repository, this update wil
 
 To update the **code** of your submodules, you should run:
 
-    git submodule update
+```ShellSession
+git submodule update
+```
     
 If a submodule is not initiated yet, add the `--init` flag. If any submodule has submodules itself, you can add the `--recursive` flag to recursively init and update submodules.
 
@@ -70,17 +77,23 @@ It is sometimes annoying if you forget to initiate and update your submodules.
 
 Fortunately, there are some tricks to make it easier:
 
-    git clone --recurse-submodules
+```ShellSession
+git clone --recurse-submodules
+```
     
 This will clone a repository and also check out and init any possible submodules the repository has.
 
-    git pull --recurse-submodules
+```ShellSession
+git pull --recurse-submodules
+```
     
 This will pull the main repository and also it's submodules.
 
 Alternative way for updating all submodules in your repository:
 
-    git submodule foreach git pull origin master
+```ShellSession
+git submodule foreach git pull origin master
+```
 
 
 ## 2. Setup PHP for using the UnifiControllerStub
@@ -91,21 +104,22 @@ If you use the UnifiControllerStub, you have to deactivate/remove the curl exten
 
 To remove the curl extension from your PHP configuration, you have to look for your php.ini and open it.
 Remove the curl extension line in your php.ini or add a `;` in front of it to have it commented (no longer used for extension integration).
-```
+```INI
 ;extension=curl.so
 ```
 
 You can show the currently used php.ini path by using:
-```
+```ShellSession
 php --ini
 ```
+
 or:
-```
+```ShellSession
 php -i
 ```
 
 Your php.ini can be printed on the terminal by using e.g.:
-```
+```ShellSession
 cat /home/runner/work/Unifi-Toolbox/Unifi-Toolbox/tests/UnifiControllerStub/php.ini
 ```
 
@@ -124,7 +138,7 @@ The file can be named for example `ValidationTests.yml`.
 In phpdbg you can set the php.ini which shall be used with the parameter `-c` and ignore the default php.ini with the parameter `-n`.
 
 If your repository in GitHub is named "Unifi-Toolbox" the content of "ValidationTests.yml" must look like this:
-```
+```YAML
 name: Validation Tests
 
 on: [push, pull_request]
@@ -175,187 +189,280 @@ $Xcsrftoken = "1234567890";
 
 
 ### Unifi Set() and Get() functions
-
-    function Unifi_setControllerType(int $newControllerType = 0): void
-
-
-    function Unifi_getControllerType(): int
+```php
+function Unifi_setControllerType(int $newControllerType = 0): void
+```
 
 
-    function Unifi_setSite(string $newSite = "default"): void
+```php
+function Unifi_getControllerType(): int
+```
 
 
-    function Unifi_getSite(): string
+```php
+function Unifi_setSite(string $newSite = "default"): void
+```
 
 
-    function Unifi_setServerAddress(string $newServerAddress = "192.168.1.1"): void
+```php
+function Unifi_getSite(): string
+```
 
 
-    function Unifi_getServerAddress(): string
+```php
+function Unifi_setServerAddress(string $newServerAddress = "192.168.1.1"): void
+```
 
 
-    function Unifi_setServerPort(string $newServerPort = "443"): void
+```php
+function Unifi_getServerAddress(): string
+```
 
 
-    function Unifi_getServerPort(): string
+```php
+function Unifi_setServerPort(string $newServerPort = "443"): void
+```
 
 
-    function Unifi_setUserName(string $newUserName = "testuser"): void
+```php
+function Unifi_getServerPort(): string
+```
 
 
-    function Unifi_getUserName(): string
+```php
+function Unifi_setUserName(string $newUserName = "testuser"): void
+```
 
 
-    function Unifi_setPassword(string $newPassword = "testpass"): void
+```php
+function Unifi_getUserName(): string
+```
 
 
-    function Unifi_getPassword(): string
+```php
+function Unifi_setPassword(string $newPassword = "testpass"): void
+```
 
 
-    function Unifi_setCookie(string $newCookie = "0123456789"): void
+```php
+function Unifi_getPassword(): string
+```
 
 
-    function Unifi_getCookie(): string
+```php
+function Unifi_setCookie(string $newCookie = "0123456789"): void
+```
 
 
-    function Unifi_setxcsrftoken(string $newXcsrftoken = "1234567890"): void
+```php
+function Unifi_getCookie(): string
+```
 
 
-    function Unifi_getxcsrftoken(): string
+```php
+function Unifi_setxcsrftoken(string $newXcsrftoken = "1234567890"): void
+```
+
+
+```php
+function Unifi_getxcsrftoken(): string
+```
 
 
 ### CURL functions
 
-    function curl_close(CurlHandle $handle): void
+```php
+function curl_close(CurlHandle $handle): void
+```
 
 curl_close: Close a cURL session
 
-return: void
-
-    function curl_copy_handle(CurlHandle $handle): ?CurlHandle/*|false*/
+```php
+function curl_copy_handle(CurlHandle $handle): ?CurlHandle/*|false*/
+```
 
 curl_copy_handle: Copy a cURL handle along with all of its preferences
 
-    function curl_exec(CurlHandle $handle)/*: string|bool*/
+```php
+function curl_exec(CurlHandle $handle)/*: string|bool*/
+```
 
 curl_exec: Perform a cURL session
 
-    function curl_file_create(string $filename, ?string $mime_type = null, ?string $posted_filename = null): CURLFile
+```php
+function curl_file_create(string $filename, ?string $mime_type = null, ?string $posted_filename = null): CURLFile
+```
 
 curl_file_create: Create a CURLFile object
 
-    function curl_getinfo(CurlHandle $handle, ?int $option = null): ?int/*mixed*/
+```php
+function curl_getinfo(CurlHandle $handle, ?int $option = null): ?int/*mixed*/
+```
 
 curl_getinfo: Get information regarding a specific transfer
 
-    function curl_init(?string $url = null): ?CurlHandle/*|false*/
+```php
+function curl_init(?string $url = null): ?CurlHandle/*|false*/
+```
 
 curl_init: Initialize a cURL session
 
-    function curl_setopt(CurlHandle $handle, int $option, $value): bool
+```php
+function curl_setopt(CurlHandle $handle, int $option, $value): bool
+```
 
 curl_setopt: Set an option for a cURL transfer
 
 
 ### CURL functions NOT implemented yet! Do you like to contribute?!?
 
-    function curl_errno(CurlHandle $handle): int
+```php
+function curl_errno(CurlHandle $handle): int
+```
 
 curl_errno: Return the last error number
 
-    function curl_error(CurlHandle $handle): string
+```php
+function curl_error(CurlHandle $handle): string
+```
 
 curl_error: Return a string containing the last error for the current session
 
-    function curl_escape(CurlHandle $handle, string $string): ?string/*|false*/
+```php
+function curl_escape(CurlHandle $handle, string $string): ?string/*|false*/
+```
 
 curl_escape: URL encodes the given string
 
-    function curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
+```php
+function curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
+```
 
 curl_multi_add_handle: Add a normal cURL handle to a cURL multi handle
 
-    function curl_multi_close(CurlMultiHandle $multi_handle): void
+```php
+function curl_multi_close(CurlMultiHandle $multi_handle): void
+```
 
 curl_multi_close: Close a set of cURL handles
 
-    function curl_multi_errno(CurlMultiHandle $multi_handle): int
+```php
+function curl_multi_errno(CurlMultiHandle $multi_handle): int
+```
 
 curl_multi_errno: Return the last multi curl error number
 
-    function curl_multi_exec(CurlMultiHandle $multi_handle, &$still_running): int
+```php
+function curl_multi_exec(CurlMultiHandle $multi_handle, &$still_running): int
+```
 
 curl_multi_exec: Run the sub-connections of the current cURL handle
 
-    function curl_multi_getcontent(CurlHandle $handle): ?string
+```php
+function curl_multi_getcontent(CurlHandle $handle): ?string
+```
 
 curl_multi_getcontent: Return the content of a cURL handle if CURLOPT_RETURNTRANSFER is set
 
-    function curl_multi_info_read(CurlMultiHandle $multi_handle, &$queued_messages = null): ?array/*|false*/
+```php
+function curl_multi_info_read(CurlMultiHandle $multi_handle, &$queued_messages = null): ?array/*|false*/
+```
 
 curl_multi_info_read: Get information about the current transfers
 
-    function curl_multi_init(): CurlMultiHandle
+```php
+function curl_multi_init(): CurlMultiHandle
+```
 
 curl_multi_init: Returns a new cURL multi handle
 
-    function curl_multi_remove_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
+```php
+function curl_multi_remove_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int
+```
 
 curl_multi_remove_handle: Remove a multi handle from a set of cURL handles
 
-    function curl_multi_select(CurlMultiHandle $multi_handle, float $timeout = 1.0): int
+```php
+function curl_multi_select(CurlMultiHandle $multi_handle, float $timeout = 1.0): int
+```
 
 curl_multi_select: Wait for activity on any curl_multi connection
 
-    function curl_multi_setopt(CurlMultiHandle $multi_handle, int $option, mixed $value): bool
+```php
+function curl_multi_setopt(CurlMultiHandle $multi_handle, int $option, mixed $value): bool
+```
 
 curl_multi_setopt: Set an option for the cURL multi handle
 
-    function curl_multi_strerror(int $error_code): ?string
+```php
+function curl_multi_strerror(int $error_code): ?string
+```
 
 curl_multi_strerror: Return string describing error code
 
-    function curl_pause(CurlHandle $handle, int $flags): int
+```php
+function curl_pause(CurlHandle $handle, int $flags): int
+```
 
 curl_pause: Pause and unpause a connection
 
-    function curl_reset(CurlHandle $handle): void
+```php
+function curl_reset(CurlHandle $handle): void
+```
 
 curl_reset: Reset all options of a libcurl session handle
 
-    function curl_setopt_array(CurlHandle $handle, array $options): bool
+```php
+function curl_setopt_array(CurlHandle $handle, array $options): bool
+```
 
 curl_setopt_array: Set multiple options for a cURL transfer
 
-    function curl_share_close(CurlShareHandle $share_handle): void
+```php
+function curl_share_close(CurlShareHandle $share_handle): void
+```
 
 curl_share_close: Close a cURL share handle
 
-    function curl_share_errno(CurlShareHandle $share_handle): int
+```php
+function curl_share_errno(CurlShareHandle $share_handle): int
+```
 
 curl_share_errno: Return the last share curl error number
 
-    function curl_share_init(): CurlShareHandle
+```php
+function curl_share_init(): CurlShareHandle
+```
 
 curl_share_init: Initialize a cURL share handle
 
-    function curl_share_setopt(CurlShareHandle $share_handle, int $option, mixed $value): bool
+```php
+function curl_share_setopt(CurlShareHandle $share_handle, int $option, mixed $value): bool
+```
 
 curl_share_setopt: Set an option for a cURL share handle
 
-    function curl_share_strerror(int $error_code): ?string
+```php
+function curl_share_strerror(int $error_code): ?string
+```
 
 curl_share_strerror: Return string describing the given error code
 
-    function curl_strerror(int $error_code): ?string
+```php
+function curl_strerror(int $error_code): ?string
+```
 
 curl_strerror: Return string describing the given error code
 
-    function curl_unescape(CurlHandle $handle, string $string): ?string/*|false*/
+```php
+function curl_unescape(CurlHandle $handle, string $string): ?string/*|false*/
+```
 
 curl_unescape: Decodes the given URL encoded string
 
-    function curl_version(): ?array/*|false*/
+```php
+function curl_version(): ?array/*|false*/
+```
 
 curl_version: Gets cURL version information
 
