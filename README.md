@@ -1,3 +1,8 @@
+![Code](https://img.shields.io/badge/Code-PHP-blue.svg)
+[![GitHub Stars](https://img.shields.io/github/stars/Brovning/UnifiControllerStub.svg?logo=github)](https://github.com/Brovning/UnifiControllerStub/stargazers)
+[![GitHub Release](https://img.shields.io/github/v/release/Brovning/UnifiControllerStub.svg?logo=github)](https://github.com/Brovning/UnifiControllerStub/releases)
+
+
 # UnifiControllerStub
 UnifiControllerStub for PHP testing of curl API requests
 
