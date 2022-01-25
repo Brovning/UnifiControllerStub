@@ -97,7 +97,7 @@ This will pull the main repository and also it's submodules.
 Alternative way for updating all submodules in your repository:
 
 ```ShellSession
-git submodule foreach git pull origin master
+git submodule foreach git pull origin main
 ```
 
 
